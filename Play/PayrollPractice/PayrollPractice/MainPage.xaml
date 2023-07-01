@@ -8,34 +8,42 @@
             Spacing="25"
             Padding="30,0"
             VerticalOptions="Center">
-
-            <Image
-                Source="dotnet_bot.png"
-                SemanticProperties.Description="Cute dot net bot waving hi to you!"
-                HeightRequest="200"
-                HorizontalOptions="Center" />
-
-            <Label
-                Text="Hello, Class!"
-                SemanticProperties.HeadingLevel="Level1"
-                FontSize="32"
-                HorizontalOptions="Center"
-                BackgroundColor="Azure"
-                TextColor="Purple"/>
-
-            <Label
-                Text="Welcome to .NET Multi-platform App UI"
-                SemanticProperties.HeadingLevel="Level2"
-                SemanticProperties.Description="Welcome to dot net Multi platform App U I"
-                FontSize="18"
-                HorizontalOptions="Center" />
+    
+            <!--set a color using RGB-->
+            <Label Text="Enter Hours Worked" 
+                   FontSize="24" 
+                   TextColor="#000000"
+                   />
+            <Entry x:Name="hoursEntry"
+                   FontSize="24"
+                   Placeholder="0.00"
+                    HorizontalOptions="StartAndExpand"
+                   />
+            <!--use a color from the colors.xml-->
+            <Label Text="Enter Hourly Rate"
+                   FontSize="24"
+                   TextColor="{StaticResource Primary}"/>
+            <Entry x:Name="rateEntry"
+                   FontSize="24"
+                   Placeholder="0.00"
+                    HorizontalOptions="StartAndExpand"
+                   />
+            <Label x:Name="payrollLabel"
+                   FontSize="32"
+                   HorizontalOptions="StartAndExpand"/>
+            <Button
+                x:Name="payrollButton"
+                Text="Calc Payroll"
+                FontSize="24"
+                Clicked="OnCalc"/>
 
             <Button
-                x:Name="CounterBtn"
-                Text="Click me"
-                SemanticProperties.Hint="Counts the number of times you click"
-                Clicked="OnCounterClicked"
-                HorizontalOptions="Center" />
+                x:Name="clearButton"
+                Text="Clear Screen"
+                Clicked="OnClear"
+                FontSize="24"/>
+
+
 
         </VerticalStackLayout>
     </ScrollView>
