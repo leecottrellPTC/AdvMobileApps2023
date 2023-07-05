@@ -1,0 +1,86 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Ch3MauiToDo.MainPage"
+             x:Name="PageToDo"
+             BindingContext="{x:Reference PageToDo}">
+
+    <Grid RowDefinitions="1*, 1*, 1*, 1*, 8*"
+      MaximumWidthRequest="400"
+      Padding="20">
+
+        <Label Grid.Row="0"
+               Text="Maui Todo"
+                SemanticProperties.HeadingLevel="Level1"
+                SemanticProperties.Description="Maui Todo"
+               HorizontalTextAlignment="Center"
+               FontSize="Title"/>
+
+            <Entry Grid.Row="1"
+               HorizontalOptions="Center"
+               Placeholder="Enter a title"
+                SemanticProperties.Hint="Title of the new todo item"
+               WidthRequest="300"
+                x:Name="TodoTitleEntry" />
+
+                <DatePicker Grid.Row="2"
+                    WidthRequest="300"
+                    HorizontalOptions="Center"
+                    SemanticProperties.Hint="Date the todo item is due"
+                    x:Name="DueDatepicker" />
+
+                <Button Grid.Row="3"
+                    Text="Add"
+                    SemanticProperties.Hint="Adds the todo item to the database"
+                    WidthRequest="100"
+                    HeightRequest="50"
+                    HorizontalOptions="Center"
+                    Clicked="Button_Clicked"/>
+
+          <!--original cod3e before 3.4-->
+                <!--
+                <ScrollView Grid.Row="4">
+                    <Label HorizontalTextAlignment="Center"
+                        SemanticProperties.Description="The list of todo items in the database"
+                            x:Name="TodosLabel" />
+                </ScrollView>
+                -->
+
+      <CollectionView Grid.Row="4"
+    x:Name="TodosCollection"
+                      ItemsSource="{Binding Todos}">
+        <CollectionView.ItemTemplate>
+          <DataTemplate>
+            <Grid WidthRequest="350"
+                Padding="10"
+                Margin="0,20"
+                ColumnDefinitions="2*, 5*"
+                RowDefinitions="Auto, 50"
+                x:Name="TodoItem">
+
+              <CheckBox VerticalOptions="Center"
+                      HorizontalOptions="Center"
+                      Grid.Column="0"
+                      Grid.Row="0" />
+
+              <Label Text="{Binding Title}"
+                  FontAttributes="Bold"
+                  LineBreakMode="WordWrap"
+                  HorizontalOptions="StartAndExpand"
+                  FontSize="Large"
+                  Grid.Row="0"
+                  Grid.Column="1"/>
+
+              <Label Text="{Binding Due, StringFormat='{0:dd MMM yyyy}'}"
+
+                  Grid.Column="1"
+                  Grid.Row="1"/>
+            </Grid>
+          </DataTemplate>
+        </CollectionView.ItemTemplate>
+      </CollectionView>
+        
+
+    </Grid>
+
+</ContentPage>

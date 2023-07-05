@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Ch3FindMe.MainPage">
+
+    <ScrollView>
+        <VerticalStackLayout
+            Spacing="25"
+            Padding="30,0"
+            VerticalOptions="Center">
+            <Image Source="location.png" HorizontalOptions="Center"
+                   SemanticProperties.Description="GLobe with a location pin" WidthRequest="150"/>
+            <!--<a href="https://www.flaticon.com/free-icons/global" title="global icons">Global icons created by Shahid-Mehmood - Flaticon</a>-->
+            <Label Text="😀FindMe😀" FontSize="32" HorizontalOptions="Center"/>
+            <Label Text="Enter your name" FontSize="18" HorizontalOptions="Center"/>
+            <Entry
+                Placeholder="Enter your name"
+                SemanticProperties.Hint="Enter your name to be used when sharing location"
+                HorizontalOptions="Center"
+                x:Name="UsernameEntry"/>
+            <Button Text="Find Me" 
+                    HorizontalOptions="Center" 
+                    SemanticProperties.Description="Click to find GPS"
+                    x:Name="FindMeButton"
+                    Clicked="OnFindMeClicked"/>
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
