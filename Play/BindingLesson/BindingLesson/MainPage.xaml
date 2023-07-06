@@ -1,7 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="BindingLesson.MainPage">
+             x:Class="BindingLesson.MainPage"
+             x:Name="WeightPage"
+             BindingContext="{x:Reference WeightPage}">
+
 
 
     <VerticalStackLayout
@@ -12,7 +15,9 @@
         <Label Text="Enter your weight in pounds" 
                FontSize="Medium"/>
         <HorizontalStackLayout>
-            <Slider x:Name="WeightSlider" Minimum="0" Maximum="400" Value="150" WidthRequest="200"></Slider>
+            <Slider x:Name="WeightSlider" Minimum="0" Maximum="400" Value="150" WidthRequest="200"
+                    ValueChanged="OnValueChanged"></Slider>
+            
             <Label x:Name="WeightLabel" FontSize="Medium" Padding="50,0,0,0"
                    BindingContext="{x:Reference WeightSlider}"
                    Text="{Binding Value, StringFormat='{0:F2} Lbs'}"></Label><!--left,top, right, bottom-->
@@ -20,8 +25,28 @@
         </HorizontalStackLayout>
         <HorizontalStackLayout>
             <Label Text="Your weight in Kg" FontSize="Medium"/>
-            <Label x:Name="KgLabel" Text="68.04" FontSize="Medium" Padding="50,0,0,0"/>
+            <Label x:Name="KgLabel" Text="68.0" FontSize="Medium" Padding="50,0,0,0"/>
         </HorizontalStackLayout>
+        <CollectionView
+            x:Name="ConvCollection"
+            ItemsSource="{Binding DataList}">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Grid WidthRequest="300" x:Name="ConvItem">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width ="200"/>
+                            <ColumnDefinition Width="100" />
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+                                           
+                        <Label Text="{Binding Name}" FontAttributes="Bold" FontSize="Medium" Grid.Row="0" Grid.Column="0"/>
+                        <Label Text="{Binding Multiplier}" FontAttributes="Italic" FontSize="Medium" Grid.Row="0" Grid.Column="1"/>
+                    </Grid>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
     </VerticalStackLayout>
     
 
