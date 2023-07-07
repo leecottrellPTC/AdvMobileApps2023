@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SettingsLecture.Views.Settings"
+             Title="Settings">
+    <VerticalStackLayout BackgroundColor="{DynamicResource AppBack}">
+        <Label 
+            Text="Project Settings"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center" />
+        <HorizontalStackLayout>
+            <RadioButton x:Name="Back1" GroupName="BackColors" CheckedChanged="ColorChange"></RadioButton>
+            <Label Text="#000000 - Black" BackgroundColor="{StaticResource Back1}"/>
+        </HorizontalStackLayout>
+        <HorizontalStackLayout>
+            <RadioButton x:Name="Back2" GroupName="BackColors" CheckedChanged="ColorChange"></RadioButton>
+            <Label Text="#0000FF - Blue" BackgroundColor="{StaticResource Back2}"/>
+        </HorizontalStackLayout>
+        <HorizontalStackLayout>
+            <RadioButton x:Name="Back3" GroupName="BackColors" CheckedChanged="ColorChange"></RadioButton>
+            <Label Text="#00FF00 - Green" BackgroundColor="{StaticResource Back3}"/>
+        </HorizontalStackLayout>
+    </VerticalStackLayout>
+</ContentPage>
+    
