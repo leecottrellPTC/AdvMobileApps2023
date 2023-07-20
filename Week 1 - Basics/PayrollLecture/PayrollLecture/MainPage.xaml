@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PayrollLecture.MainPage">
+
+    <ScrollView>
+        <!--this is a comment -->
+        <VerticalStackLayout
+            Spacing="15"
+            Padding="10"
+            VerticalOptions="Center">
+
+            
+            <Label Text="Enter Hours Worked"
+                   FontSize="Large"
+                   TextColor="#ff00ff"/>
+
+            <Entry x:Name="hoursEntry"
+                   FontSize="Large"
+                   Placeholder="0.00"
+                   />
+
+            <Label Text="Enter Hourly Rate"
+                   FontSize="Large"
+                   TextColor="{StaticResource Primary}"/>
+
+            <Entry x:Name="rateEntry"
+                   FontSize="Large"
+                   Placeholder="0.00"
+                   Keyboard="Numeric"/>
+
+            <Label x:Name="payrollLabel"
+                   FontSize="Large"/>
+
+            <Button x:Name="payrollButton"
+                    Text="Calc Payroll"
+                    FontSize="Large"
+                    Clicked="OnPayrollClick"/>
+            <Button x:Name="resetButton"
+                    Text="Clear Screen"
+                    FontSize="Large"
+                    Clicked="OnResetClick"/>
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
