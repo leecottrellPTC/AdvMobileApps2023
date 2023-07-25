@@ -36,9 +36,7 @@
             x:Name="ConvCollection"
             ItemsSource="{Binding DataList}">
             <CollectionView.ItemTemplate>
-
                 <DataTemplate>
-                    
                     <Grid WidthRequest="300" x:Name="ConvItem">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="200"/>
