@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DataBindLecture_WeightConvert.MainPage"
+             x:Name="weightPage"
+             BindingContext="{x:Reference weightPage}">
+
+    <VerticalStackLayout
+        Spacing="25"
+        Padding="10"
+        VerticalOptions="Start">
+        <Label Text="Enter your weight in pounds"
+               FontSize="Medium"/>
+        <HorizontalStackLayout>
+            <Slider x:Name="weightSlider"
+                    Minimum="0"
+                    Maximum="400"
+                    Value="150"
+                    WidthRequest="200"
+                    ValueChanged="OnSliderChange"/>
+            <Label x:Name="weightLabel"
+                   BindingContext="{x:Reference weightSlider}"
+                   Text="{Binding Value, StringFormat='{0:F1} Lbs'}"
+                   FontSize="Medium"
+                   Padding="50,0,0,0"/>
+        </HorizontalStackLayout>
+        <HorizontalStackLayout>
+            <Label Text="Kilograms" FontSize="Medium" 
+                   WidthRequest="200"/>
+            <Label Text="68.04" FontSize="Medium"
+                   x:Name="kilogramLabel"
+                   Padding="50,0,0,0"/>
+        </HorizontalStackLayout>
+        
+        <CollectionView
+            x:Name="ConvCollection"
+            ItemsSource="{Binding DataList}">
+            <CollectionView.ItemTemplate>
+
+                <DataTemplate>
+                    
+                    <Grid WidthRequest="300" x:Name="ConvItem">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="200"/>
+                            <ColumnDefinition Width="100"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+                        <Label Text="{Binding Name}" 
+                   WidthRequest="200" FontSize="Medium" Grid.Row="0" Grid.Column="0"/>
+                        <Label Text="{Binding Multiplier}" 
+                   WidthRequest="100" FontSize="Medium" Grid.Row="0" Grid.Column="1"/>
+                    </Grid>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+           
+    </VerticalStackLayout>
+</ContentPage>
