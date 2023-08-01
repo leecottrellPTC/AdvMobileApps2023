@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SettingsPageLecture.Views.Settings"
+             Title="Settings">
+    <ScrollView BackgroundColor="LightGray">
+        <TableView
+            VerticalOptions="StartAndExpand">
+            <TableRoot>
+                <TableSection>
+                    <ImageCell ImageSource="settings.png" 
+                               Text="App Settings"/>
+                    <TextCell Text="Settings Page"
+                              Detail="Choose your colors"/>
+                </TableSection>
+                <TableSection Title="Background">
+                    <ViewCell>
+                        <HorizontalStackLayout 
+                            BackgroundColor="{DynamicResource Back1}">
+                            <Label Text="White" WidthRequest="100" Padding="30,0,0,0"/>
+                            <RadioButton x:Name="Back1Radio"
+                                         GroupName="BackColors"
+                                         CheckedChanged="OnCheckChange"/>
+                        </HorizontalStackLayout>
+                    </ViewCell>
+                    <ViewCell>
+                        <HorizontalStackLayout 
+                            BackgroundColor="{DynamicResource Back2}">
+                            <Label Text="Blue" WidthRequest="100" Padding="30,0,0,0"/>
+                            <RadioButton x:Name="Back2Radio"
+                                         GroupName="BackColors"
+                                         CheckedChanged="OnCheckChange"/>
+                        </HorizontalStackLayout>
+                    </ViewCell>
+                    <ViewCell>
+                        <HorizontalStackLayout 
+                            BackgroundColor="{DynamicResource Back3}">
+                            <Label Text="Pink" WidthRequest="100" Padding="30,0,0,0"/>
+                            <RadioButton x:Name="Back3Radio"
+                                         GroupName="BackColors"
+                                         CheckedChanged="OnCheckChange"/>
+                        </HorizontalStackLayout>
+                    </ViewCell>
+                </TableSection>
+                
+            </TableRoot>
+            
+        </TableView>
+    </ScrollView>
+</ContentPage>

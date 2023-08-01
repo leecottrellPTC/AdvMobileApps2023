@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="SettingsLecture2023.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:SettingsLecture2023"
+    xmlns:views="clr-namespace:SettingsLecture2023.Views"
+    Shell.FlyoutBehavior="Disabled">
+
+    <FlyoutItem FlyoutDisplayOptions="AsMultipleItems">
+        <ShellContent
+            Title="Home"
+            ContentTemplate="{DataTemplate local:MainPage}"
+            Route="MainPage" 
+            Icon="home.png"/>
+        <ShellContent
+            Title="Settings"
+            ContentTemplate="{DataTemplate views:Settings}"
+            Route="Settings" 
+            Icon="settings.png"/>
+    </FlyoutItem>
+</Shell>

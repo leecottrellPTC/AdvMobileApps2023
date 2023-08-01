@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MovieMonster.MainPage">
+
+    <ScrollView
+        BackgroundColor="Black">
+        <VerticalStackLayout
+            Spacing="25"
+            Padding="30,0"
+            VerticalOptions="StartAndExpand">
+
+            <Label Text="Movie Monsters"
+                   FontSize="Large"
+                   TextColor="White"/>
+            <Picker
+                Title="Pick a movie"
+                x:Name="moviePicker"
+                TextColor="Black"
+                TitleColor="Black"
+                Background="White"
+                FontAttributes="Bold"
+                FontSize="Large"
+                SelectedIndexChanged="OnMovieChanged">
+                <Picker.ItemsSource>
+                    <x:Array Type="{x:Type x:String}">
+                        <x:String>Alien</x:String>
+                        <x:String>Friday the 13th</x:String>
+                        <x:String>Halloween</x:String>
+                    </x:Array>
+                </Picker.ItemsSource>
+            </Picker>
+
+            <HorizontalStackLayout
+                Spacing="10">
+                <Image x:Name="posterImage"
+                       WidthRequest="150"
+                       Source="reel.jpg"/>
+                <Image x:Name="monsterImage"
+                       WidthRequest="150"
+                       Source="reel.jpg"
+                       
+                       />
+            </HorizontalStackLayout>
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
