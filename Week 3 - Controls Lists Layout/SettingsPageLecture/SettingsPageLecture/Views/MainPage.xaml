@@ -42,9 +42,7 @@
                     Source="alienposter.jpg"
                     WidthRequest="{OnPlatform Android='150', iOS='150', Default='250'}"
                     Grid.Column="0"
-                    Grid.Row="1"
-                    
-                    />
+                    Grid.Row="1"/>
                 <Image
                     Source="alienmonster.jpg"
                     WidthRequest="{OnPlatform Android='150', iOS='150', Default='250'}"
