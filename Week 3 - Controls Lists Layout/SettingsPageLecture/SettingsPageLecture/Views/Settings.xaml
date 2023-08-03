@@ -9,15 +9,21 @@
             <TableRoot>
                 <TableSection>
                     <ImageCell ImageSource="settings.png" 
-                               Text="App Settings"/>
+                               Text="App Settings"
+                               TextColor="Black"/>
                     <TextCell Text="Settings Page"
-                              Detail="Choose your colors"/>
+                              Detail="Choose your colors"
+                              TextColor="Black"
+                              DetailColor="Red"/>
                 </TableSection>
-                <TableSection Title="Background">
+                <TableSection Title="Background"
+                              TextColor="Black">
                     <ViewCell>
                         <HorizontalStackLayout 
                             BackgroundColor="{DynamicResource Back1}">
-                            <Label Text="White" WidthRequest="100" Padding="30,0,0,0"/>
+                            <Label 
+                                TextColor="Black"
+                                Text="White" WidthRequest="100" Padding="30,0,0,0"/>
                             <RadioButton x:Name="Back1Radio"
                                          GroupName="BackColors"
                                          CheckedChanged="OnCheckChange"/>
@@ -26,7 +32,9 @@
                     <ViewCell>
                         <HorizontalStackLayout 
                             BackgroundColor="{DynamicResource Back2}">
-                            <Label Text="Blue" WidthRequest="100" Padding="30,0,0,0"/>
+                            <Label 
+                                TextColor="Black"
+                                Text="Blue" WidthRequest="100" Padding="30,0,0,0"/>
                             <RadioButton x:Name="Back2Radio"
                                          GroupName="BackColors"
                                          CheckedChanged="OnCheckChange"/>
@@ -35,7 +43,9 @@
                     <ViewCell>
                         <HorizontalStackLayout 
                             BackgroundColor="{DynamicResource Back3}">
-                            <Label Text="Pink" WidthRequest="100" Padding="30,0,0,0"/>
+                            <Label 
+                                TextColor="Black"
+                                Text="Pink" WidthRequest="100" Padding="30,0,0,0"/>
                             <RadioButton x:Name="Back3Radio"
                                          GroupName="BackColors"
                                          CheckedChanged="OnCheckChange"/>

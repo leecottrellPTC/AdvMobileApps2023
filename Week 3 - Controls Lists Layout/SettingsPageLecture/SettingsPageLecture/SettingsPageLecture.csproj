@@ -49,7 +49,15 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <None Remove="Resources\Images\alienmonster.jpg" />
+	  <None Remove="Resources\Images\alienposter.jpg" />
+	  <None Remove="Resources\Images\blank.png" />
+	  <None Remove="Resources\Images\fridaymonster.jpg" />
+	  <None Remove="Resources\Images\fridayposter.jpg" />
+	  <None Remove="Resources\Images\halloweenmonster.jpg" />
+	  <None Remove="Resources\Images\halloweenposter.jpg" />
 	  <None Remove="Resources\Images\home.png" />
+	  <None Remove="Resources\Images\reel.jpg" />
 	  <None Remove="Resources\Images\settings.png" />
 	</ItemGroup>
 

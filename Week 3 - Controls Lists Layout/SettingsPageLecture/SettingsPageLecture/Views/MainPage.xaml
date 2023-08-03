@@ -4,37 +4,78 @@
              x:Class="SettingsPageLecture.MainPage">
 
     <ScrollView
-        BackgroundColor="{DynamicResource AppBack}">
+        BackgroundColor="{DynamicResource AppBack}"
+        >
         <VerticalStackLayout
             Spacing="25"
             Padding="30,0"
             VerticalOptions="Center">
 
             <Image
-                Source="dotnet_bot.png"
-                SemanticProperties.Description="Cute dot net bot waving hi to you!"
-                HeightRequest="200"
-                HorizontalOptions="Center" />
+                x:Name="PosterImage"
+                Source="blank.png"
+                WidthRequest="{OnPlatform Android='150', iOS='150', Default='250'}"/>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Label Text="Poster" 
+                       TextColor="Black"
+                       FontSize="Large"
+                       Grid.Column="0"
+                       Grid.Row="0"
+                       HorizontalOptions="Center"/>
+                <Label Text="Monster" 
+                       TextColor="Black"
+                       FontSize="Large"
+                       Grid.Column="1"
+                       Grid.Row="0"
+                       HorizontalOptions="Center"/>
+                <Image
+                    Source="alienposter.jpg"
+                    WidthRequest="{OnPlatform Android='150', iOS='150', Default='250'}"
+                    Grid.Column="0"
+                    Grid.Row="1"
+                    
+                    />
+                <Image
+                    Source="alienmonster.jpg"
+                    WidthRequest="{OnPlatform Android='150', iOS='150', Default='250'}"
+                    Grid.Column="1"
+                    Grid.Row="1"/>
+                
+                <Image
+                    Source="fridayposter.jpg"
+                    WidthRequest="{OnPlatform Android='150', iOS='150', Default='250'}"
+                    Grid.Column="0"
+                    Grid.Row="2"/>
+                <Image
+                    Source="fridaymonster.jpg"
+                    WidthRequest="{OnPlatform Android='150', iOS='150', Default='250'}"
+                    Grid.Column="1"
+                    Grid.Row="2"/>
 
-            <Label
-                Text="Hello, World!"
-                SemanticProperties.HeadingLevel="Level1"
-                FontSize="32"
-                HorizontalOptions="Center" />
+                <Image
+                    Source="halloweenposter.jpg"
+                    WidthRequest="{OnPlatform Android='150', iOS='150', Default='250'}"
+                    Grid.Column="0"
+                    Grid.Row="3"/>
+                <Image
+                    Source="halloweenmonster.jpg"
+                    WidthRequest="{OnPlatform Android='150', iOS='150', Default='250'}"
+                    Grid.Column="1"
+                    Grid.Row="3"/>
 
-            <Label
-                Text="Welcome to .NET Multi-platform App UI"
-                SemanticProperties.HeadingLevel="Level2"
-                SemanticProperties.Description="Welcome to dot net Multi platform App U I"
-                FontSize="18"
-                HorizontalOptions="Center" />
+            </Grid>
 
-            <Button
-                x:Name="CounterBtn"
-                Text="Click me"
-                SemanticProperties.Hint="Counts the number of times you click"
-                Clicked="OnCounterClicked"
-                HorizontalOptions="Center" />
+
 
         </VerticalStackLayout>
     </ScrollView>
