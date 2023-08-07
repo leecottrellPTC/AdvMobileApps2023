@@ -4,39 +4,88 @@
              x:Class="SettingsLecture2023.MainPage">
 
     <ScrollView
-        BackgroundColor="{DynamicResource AppBack}">
+        BackgroundColor="{DynamicResource AppBack}"
+        >
         <VerticalStackLayout
             Spacing="25"
             Padding="30,0"
             VerticalOptions="Center">
 
             <Image
-                Source="dotnet_bot.png"
-                SemanticProperties.Description="Cute dot net bot waving hi to you!"
-                HeightRequest="200"
-                HorizontalOptions="Center" />
+                x:Name="PosterImage"
+                Source="blank.png"
+                WidthRequest="150"/>
+            <Grid
+                RowSpacing="15"
+                ColumnSpacing="10"
+                VerticalOptions="Start">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    
+                </Grid.ColumnDefinitions>
+      
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/><!--title row-->
+                    <RowDefinition Height="Auto"/><!--Alien title row-->
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/><!--Friday Title row-->
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/><!--Halloween Title row-->
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Label Text="Poster" TextColor="Black" FontSize="Large" HorizontalOptions="Center" VerticalOptions="Start"
+                       Grid.Column="0"
+                       Grid.Row="0"
+                       />
+                <Label Text="Monster" TextColor="Black" FontSize="Large" HorizontalOptions="Center" VerticalOptions="Start"
+                       Grid.Column="1"
+                       Grid.Row="0"/>
+                <Label Text="Alien - Xenomorph" TextColor="Black" FontSize="Large" HorizontalOptions="Center" VerticalOptions="Start"
+                       Grid.Row="1"
+                       Grid.ColumnSpan="2"/>
+                <Image
+                    Source="alienposter.jpg" VerticalOptions="Start"
+                    WidthRequest="{OnPlatform Android='150', iOS='150', Default='250'}"
+                    Grid.Column="0"
+                    Grid.Row="2"/>
+                <Image
+                    Source="alienmonster.jpg" VerticalOptions="Start"
+                    WidthRequest="{OnPlatform Android='150', iOS='150', Default='250'}"
+                    Grid.Column="1"
+                    Grid.Row="2"/>
 
-            <Label
-                Text="Hello, World!"
-                SemanticProperties.HeadingLevel="Level1"
-                FontSize="32"
-                HorizontalOptions="Center" />
+                <Label Text="Friday the 13th - Jason" TextColor="Black" FontSize="Large" HorizontalOptions="Center" VerticalOptions="Start"
+                       Grid.Row="3"
+                       Grid.ColumnSpan="2"/>
+                <Image
+                    Source="fridayposter.jpg" VerticalOptions="Start"
+                    WidthRequest="{OnPlatform Android='150', iOS='150', Default='250'}"
+                    Grid.Column="0"
+                    Grid.Row="4"/>
+                <Image
+                    Source="fridaymonster.jpg" VerticalOptions="Start"
+                    WidthRequest="{OnPlatform Android='150', iOS='150', Default='250'}"
+                    Grid.Column="1"
+                    Grid.Row="4"/>
+                    
+                <Label Text="Halloween - Michael Myers" TextColor="Black" FontSize="Large" HorizontalOptions="Center" VerticalOptions="Start"
+                       Grid.Row="5"
+                       Grid.ColumnSpan="2"/>
+                <Image
+                    Source="halloweenposter.jpg" VerticalOptions="Start"
+                    WidthRequest="{OnPlatform Android='150', iOS='150', Default='250'}"
+                    Grid.Column="0"
+                    Grid.Row="6"/>
+                <Image
+                    Source="halloweenmonster.jpg" VerticalOptions="Start"
+                    WidthRequest="{OnPlatform Android='150', iOS='150', Default='250'}"
+                    Grid.Column="1"
+                    Grid.Row="6"/>
+            </Grid>
 
-            <Label
-                Text="Welcome to .NET Multi-platform App UI"
-                SemanticProperties.HeadingLevel="Level2"
-                SemanticProperties.Description="Welcome to dot net Multi platform App U I"
-                FontSize="18"
-                HorizontalOptions="Center" />
 
-            <Button
-                x:Name="CounterBtn"
-                Text="Click me"
-                SemanticProperties.Hint="Counts the number of times you click"
-                Clicked="OnCounterClicked"
-                HorizontalOptions="Center" />
 
         </VerticalStackLayout>
     </ScrollView>
-
 </ContentPage>
