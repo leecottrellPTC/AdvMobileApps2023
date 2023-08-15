@@ -2,7 +2,12 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="PitchCounter.Views.Player"
+             x:Name="PlayerPage"
+             xmlns:data="clr-namespace:PitchCounter.Data"
              Title="Player">
+    <ContentPage.BindingContext>
+        <data:DataBase/>
+    </ContentPage.BindingContext>
     <ScrollView>
         <VerticalStackLayout  BackgroundColor="{StaticResource PirateBlack}">
             <Frame BackgroundColor="{StaticResource PirateYellow}" 
@@ -30,8 +35,8 @@
                 <Label Text="Player" Grid.Column="0" Grid.Row="0" 
                        FontSize="Large"
                         HorizontalOptions="Start"/>
-                <Label Text="Player Name" Grid.Column="1" Grid.Row="0" 
-/>
+                <Label Text="" Grid.Column="1" Grid.Row="0"
+                       x:Name="NameLabel"/>
                 
                 <Label Text="Balls" Grid.Column="0" Grid.Row="1" 
                        FontSize="Large"
@@ -40,13 +45,13 @@
                        FontSize="Large"
                         HorizontalOptions="Start"/>
 
-                <Label Text="0" Grid.Column="1" Grid.Row="1" x:Name="BallLabel"/>
-                <Label Text="0" Grid.Column="1" Grid.Row="2" x:Name="StrikeLabel"/>
+                <Label Text=""  Grid.Column="1" Grid.Row="1" x:Name="BallLabel"/>
+                <Label Text="" Grid.Column="1" Grid.Row="2" x:Name="StrikeLabel"/>
 
-                <Label Text="Total Pitches" Grid.Column="0" Grid.Row="3" x:Name="TotPitches"
+                <Label Text="Total Pitches" Grid.Column="0" Grid.Row="3" x:Name="TotLabel"
                         FontSize="Large"
                         HorizontalOptions="Start"/>
-                <Label Text="0" Grid.Column="1" Grid.Row="3" x:Name="TotalLabel"/>
+                <Label Text="{Binding aPlayer.Total}" Grid.Column="1" Grid.Row="3" x:Name="TotalLabel"/>
             </Grid>
 
         </VerticalStackLayout>

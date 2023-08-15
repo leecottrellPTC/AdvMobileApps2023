@@ -7,24 +7,19 @@
     xmlns:views="clr-namespace:PitchCounter.Views"
     Shell.FlyoutBehavior="Flyout">
     <FlyoutItem FlyoutDisplayOptions="AsMultipleItems">
-        <ShellContent
-            Title="Data"
+        <ShellContent Title="Data"
             ContentTemplate="{DataTemplate views:Data}"
             Route="Data"
             Icon="database.png"/>
-        <ShellContent
-            Title="Home"
+        <ShellContent Title="Home"
             ContentTemplate="{DataTemplate local:MainPage}"
             Route="MainPage"
             Icon="home.png"/>
-        
-        <ShellContent
-            Title="Player"
+        <ShellContent Title="Player"
             ContentTemplate="{DataTemplate views:Player}"
             Route="Player"
             Icon="player.png"/>
-        <ShellContent
-            Title="Settings"
+        <ShellContent Title="Settings"
             ContentTemplate="{DataTemplate views:Settings}"
             Route="Settings"
             Icon="settings.png"/>
