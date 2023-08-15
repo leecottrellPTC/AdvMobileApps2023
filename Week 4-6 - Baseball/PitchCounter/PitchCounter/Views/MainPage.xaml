@@ -1,7 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="PitchCounter.MainPage">
+             x:Class="PitchCounter.MainPage"
+             xmlns:res="clr-namespace:PitchCounter.Resources">
 
     <ScrollView>
         <VerticalStackLayout  BackgroundColor="{StaticResource PirateBlack}">
@@ -9,7 +10,7 @@
                    Padding="24" 
                    Margin="0,0,0,24" 
                    CornerRadius="0">
-                <Label Text="Pitch Counter!" HorizontalOptions="Center"
+                <Label Text="{x:Static res:Strings.Title}" HorizontalOptions="Center"
                        TextColor="{StaticResource PirateBlack}"
                        FontSize="Large"/>
             </Frame>
@@ -26,13 +27,13 @@
                     <RowDefinition Height="50"/>
                     <RowDefinition Height="200"/>
                 </Grid.RowDefinitions>
-                <Button Text="Ball" Grid.Column="0" Grid.Row="0" x:Name="BallButton"/>
-                <Button Text="Strike" Grid.Column="0" Grid.Row="1" x:Name="StrikeButton"/>
+                <Button Text="{x:Static res:Strings.BallText}" Grid.Column="0" Grid.Row="0" x:Name="BallButton"/>
+                <Button Text="{x:Static res:Strings.StrikeText}" Grid.Column="0" Grid.Row="1" x:Name="StrikeButton"/>
 
                 <Label Text="0" Grid.Column="1" Grid.Row="0" x:Name="BallLabel"/>
                 <Label Text="0" Grid.Column="1" Grid.Row="1" x:Name="StrikeLabel"/>
 
-                <Label Text="Total Pitches" Grid.Column="0" Grid.Row="2" x:Name="TotPitches"/>
+                <Label Text="{x:Static res:Strings.TotPitches}" Grid.Column="0" Grid.Row="2" x:Name="TotPitches"/>
                 <Label Text="0" Grid.Column="1" Grid.Row="2" x:Name="TotalLabel"/>
             </Grid>
 
