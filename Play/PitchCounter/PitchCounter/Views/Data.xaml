@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PitchCounter.Views.Data"
+             x:Name="DataPage"
+             BindingContext="{x:Reference DataPage}"
+             Title="Data">
+    <ScrollView>
+        <VerticalStackLayout  BackgroundColor="{StaticResource PirateBlack}">
+            <Frame BackgroundColor="{StaticResource PirateYellow}" 
+           Padding="24" 
+           Margin="0,0,0,24" 
+           CornerRadius="0">
+                <Label Text="Player List" HorizontalOptions="Center"
+               TextColor="{StaticResource PirateBlack}"
+               FontSize="Large"/>
+            </Frame>
+            
+            <Picker x:Name="PlayerPicker"
+                    ItemsSource="{Binding playerList}"
+                    ItemDisplayBinding="{Binding Name}"
+                    BackgroundColor="{StaticResource PirateYellow}"
+                    Title="Pick a pitcher"
+                    FontSize="Large"
+                    Margin="5,0,5,0">
+            </Picker>
+            
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
