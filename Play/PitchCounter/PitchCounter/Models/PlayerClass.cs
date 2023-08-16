@@ -7,7 +7,7 @@ using System.Xml.Linq;
 
 namespace PitchCounter.Models
 {
-    public class Player
+    public class PlayerClass
     {
 		private int _balls;
 
@@ -41,7 +41,7 @@ namespace PitchCounter.Models
 			set { _name = value; }
 		}
 
-        public Player(int balls, int strikes, int total, string name)
+        public PlayerClass(int balls, int strikes, int total, string name)
         {
             _balls = balls;
             _strikes = strikes;
@@ -49,7 +49,7 @@ namespace PitchCounter.Models
             _name = name;
         }
 
-		public Player()
+		public PlayerClass()
 		{
             _balls = 0;
             _strikes = 0;

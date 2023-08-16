@@ -2,12 +2,7 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="PitchCounter.Views.Player"
-             x:Name="PlayerPage"
-             xmlns:data="clr-namespace:PitchCounter.Data"
              Title="Player">
-    <ContentPage.BindingContext>
-        <data:DataBase/>
-    </ContentPage.BindingContext>
     <ScrollView>
         <VerticalStackLayout  BackgroundColor="{StaticResource PirateBlack}">
             <Frame BackgroundColor="{StaticResource PirateYellow}" 
@@ -37,10 +32,10 @@
                         HorizontalOptions="Start"/>
                 <Label Text="" Grid.Column="1" Grid.Row="0"
                        x:Name="NameLabel"/>
-                
+
                 <Label Text="Balls" Grid.Column="0" Grid.Row="1" 
                        FontSize="Large"
-                       HorizontalOptions="Start"/>
+                       HorizontalOptions="Start" />
                 <Label Text="Strikes" Grid.Column="0" Grid.Row="2"
                        FontSize="Large"
                         HorizontalOptions="Start"/>
@@ -53,7 +48,7 @@
                         HorizontalOptions="Start"/>
                 <Label Text="{Binding aPlayer.Total}" Grid.Column="1" Grid.Row="3" x:Name="TotalLabel"/>
             </Grid>
-
+            <Button Text="Click Me" Clicked="Button_Clicked"/>
         </VerticalStackLayout>
     </ScrollView>
 </ContentPage>
