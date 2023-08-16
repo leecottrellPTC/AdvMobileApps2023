@@ -1,4 +1,5 @@
 ﻿namespace SettingsLecture2023;
+using res = SettingsLecture2023.Resources;
 
 public partial class MainPage : ContentPage
 {
@@ -7,6 +8,7 @@ public partial class MainPage : ContentPage
 	public MainPage()
 	{
 		InitializeComponent();
+        String text = res.Strings.AppDesc;
         Color appBack;
         if (Preferences.Default.ContainsKey("AppBack"))
         {

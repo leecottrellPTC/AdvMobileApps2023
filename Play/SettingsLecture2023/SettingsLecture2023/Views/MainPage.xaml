@@ -1,7 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="SettingsLecture2023.MainPage">
+             x:Class="SettingsLecture2023.MainPage"
+             xmlns:res="clr-namespace:SettingsLecture2023.Resources">
 
     <ScrollView
         BackgroundColor="{DynamicResource AppBack}"
@@ -11,11 +12,18 @@
             Padding="30,0"
             VerticalOptions="Center">
 
+            <Label Text="{x:Static res:Strings.Title}" FontSize="Title"/>
+            <Label Text="{x:Static res:Strings.AppDesc}"/>
+            <Button Text="{x:Static res:Strings.CalcButton}"/>
+            <Button Text="{x:Static res:Strings.ClearButton}"/>
+            <!--some image-->
             <Image
                 x:Name="PosterImage"
                 Source="blank.png"
-                WidthRequest="150"/>
-            <Grid
+                WidthRequest="150"
+                SemanticProperties.Description="{x:Static res:Strings.ImageDesc}"/>
+      
+            <!--<Grid
                 RowSpacing="15"
                 ColumnSpacing="10"
                 VerticalOptions="Start">
@@ -26,12 +34,12 @@
                 </Grid.ColumnDefinitions>
       
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="Auto"/><!--title row-->
-                    <RowDefinition Height="Auto"/><!--Alien title row-->
+                    <RowDefinition Height="Auto"/>--><!--title row--><!--
+                    <RowDefinition Height="Auto"/>--><!--Alien title row--><!--
                     <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="Auto"/><!--Friday Title row-->
+                    <RowDefinition Height="Auto"/>--><!--Friday Title row--><!--
                     <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="Auto"/><!--Halloween Title row-->
+                    <RowDefinition Height="Auto"/>--><!--Halloween Title row--><!--
                     <RowDefinition Height="*"/>
                 </Grid.RowDefinitions>
                 <Label Text="Poster" TextColor="Black" FontSize="Large" HorizontalOptions="Center" VerticalOptions="Start"
@@ -82,10 +90,76 @@
                     WidthRequest="{OnPlatform Android='150', iOS='150', Default='250'}"
                     Grid.Column="1"
                     Grid.Row="6"/>
-            </Grid>
+            </Grid>-->
+            <Border
+                    StrokeThickness="2"
+                    StrokeShape="RoundRectangle 10,10,10,10"
+                    Stroke="AntiqueWhite"
+                    BackgroundColor="#000000"
+                    Padding="10">
+         
+                <FlexLayout
+                Wrap="Wrap"
+                JustifyContent="SpaceEvenly"
+                Direction="Row"
+                AlignItems="Start">
+               
+                    <VerticalStackLayout HeightRequest="300">
+                    
+                        <Label Text="Alien" FontSize="Medium" TextColor="AntiqueWhite" HorizontalOptions="Center"/>
+                        <Image
+                                Source="alienposter.jpg" VerticalOptions="Start"
+                                WidthRequest="{OnPlatform Android='150', iOS='150', Default='250'}"
+                                />
+                
 
+                    </VerticalStackLayout>
+                
+                
 
+                <VerticalStackLayout HeightRequest="300" >
+                        <Label Text="Xenomorph" FontSize="Medium" TextColor="AntiqueWhite"/>
+                    <Image
+                        Source="alienmonster.jpg" VerticalOptions="Start"
+                        WidthRequest="{OnPlatform Android='150', iOS='150', Default='250'}"
+                       />
 
+                </VerticalStackLayout>
+                <VerticalStackLayout HeightRequest="300" >
+                        <Label Text="Friday the 13th" 
+                               FontSize="Medium" 
+                               TextColor="AntiqueWhite"
+                               HorizontalOptions="Center"/>
+                    <Image
+                    Source="fridayposter.jpg" VerticalOptions="Start"
+                    WidthRequest="{OnPlatform Android='150', iOS='150', Default='250'}"
+                    />
+                </VerticalStackLayout>
+                <VerticalStackLayout HeightRequest="300" >
+                        <Label Text="Jason Vorhees" FontSize="Medium" TextColor="AntiqueWhite"/>
+                    <Image
+                    Source="fridaymonster.jpg" VerticalOptions="Start"
+                    WidthRequest="{OnPlatform Android='150', iOS='150', Default='250'}"
+                    />
+                </VerticalStackLayout>
+                <VerticalStackLayout HeightRequest="300" >
+                        <Label Text="Halloween" FontSize="Medium" TextColor="AntiqueWhite"/>
+                    <Image
+                    Source="halloweenposter.jpg" VerticalOptions="Start"
+                    WidthRequest="{OnPlatform Android='150', iOS='150', Default='250'}"
+                   />
+                </VerticalStackLayout>
+                <VerticalStackLayout HeightRequest="300" >
+                        <Label Text="Michael Myers" FontSize="Medium" TextColor="AntiqueWhite"/>
+                    <Image
+                    Source="halloweenmonster.jpg" VerticalOptions="Start"
+                    WidthRequest="{OnPlatform Android='150', iOS='150', Default='250'}"
+                  />
+                </VerticalStackLayout>
+            </FlexLayout>
+
+            </Border>
+        
         </VerticalStackLayout>
     </ScrollView>
 </ContentPage>
