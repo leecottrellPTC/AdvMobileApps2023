@@ -3,10 +3,20 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="PitchCounter.Views.Data"
              Title="Data">
-    <VerticalStackLayout>
-        <Label 
-            Text="Data page!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
+    <VerticalStackLayout BackgroundColor="{StaticResource PirateBlack}">
+        <Frame BackgroundColor="{StaticResource PirateYellow}" 
+                Padding="24" 
+                Margin="0,0,0,24" 
+                CornerRadius="0">
+            <Label Text="Player List" HorizontalOptions="Center"
+               TextColor="{StaticResource PirateBlack}"
+               FontSize="Large"/>
+        </Frame>
+
+        <Picker x:Name="PlayerPicker"
+                BackgroundColor="{StaticResource PirateYellow}"
+                Title="Pick a Pitcher"
+                FontSize="Large"
+                Margin="5,0,0,5"/>
     </VerticalStackLayout>
 </ContentPage>
