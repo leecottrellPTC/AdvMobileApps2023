@@ -48,6 +48,7 @@
                         HorizontalOptions="Start"/>
                 <Label Text="0" Grid.Column="1" Grid.Row="3" x:Name="TotalLabel"/>
             </Grid>
+            <Button Text="More Info" Clicked="Button_Clicked"/>
 
         </VerticalStackLayout>
     </ScrollView>

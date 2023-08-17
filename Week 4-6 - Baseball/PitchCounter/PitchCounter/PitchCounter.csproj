@@ -73,6 +73,9 @@
 	  <MauiXaml Update="Views\Data.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
+	  <MauiXaml Update="Views\EasterEgg.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="Views\Player.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>

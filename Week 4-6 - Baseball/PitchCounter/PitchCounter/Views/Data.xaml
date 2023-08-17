@@ -17,6 +17,7 @@
                 BackgroundColor="{StaticResource PirateYellow}"
                 Title="Pick a Pitcher"
                 FontSize="Large"
-                Margin="5,0,0,5"/>
+                Margin="5,0,0,5"
+                SelectedIndexChanged="ShowThePlayer"/>
     </VerticalStackLayout>
 </ContentPage>
