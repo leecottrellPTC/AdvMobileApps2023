@@ -2,7 +2,11 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="PitchCounter.MainPage"
-             xmlns:res="clr-namespace:PitchCounter.Resources">
+             xmlns:res="clr-namespace:PitchCounter.Resources"
+             xmlns:local="clr-namespace:PitchCounter.ViewModels">
+    <ContentPage.BindingContext>
+        <local:PlayerViewModel/>
+    </ContentPage.BindingContext>
 
     <ScrollView>
         <VerticalStackLayout  BackgroundColor="{StaticResource PirateBlack}">
@@ -27,15 +31,21 @@
                     <RowDefinition Height="50"/>
                     <RowDefinition Height="200"/>
                 </Grid.RowDefinitions>
-                <Button Text="{x:Static res:Strings.BallText}" Grid.Column="0" Grid.Row="0" x:Name="BallButton"/>
-                <Button Text="{x:Static res:Strings.StrikeText}" Grid.Column="0" Grid.Row="1" x:Name="StrikeButton"/>
+                <Button Text="{x:Static res:Strings.BallText}" 
+                        Command="{Binding AddBallCommand}"
+                        Grid.Column="0" Grid.Row="0" x:Name="BallButton"/>
+                <Button Text="{x:Static res:Strings.StrikeText}" 
+                        Command="{Binding AddStrikeCommand}"
+                        Grid.Column="0" Grid.Row="1" x:Name="StrikeButton"/>
 
-                <Label Text="0" Grid.Column="1" Grid.Row="0" x:Name="BallLabel"/>
-                <Label Text="0" Grid.Column="1" Grid.Row="1" x:Name="StrikeLabel"/>
+                <Label Text="{Binding ThePitcher.Balls}" Grid.Column="1" Grid.Row="0" x:Name="BallLabel"/>
+                <Label Text="{Binding ThePitcher.Strikes}" Grid.Column="1" Grid.Row="1" x:Name="StrikeLabel"/>
 
                 <Label Text="{x:Static res:Strings.TotPitches}" Grid.Column="0" Grid.Row="2" x:Name="TotPitches"/>
-                <Label Text="0" Grid.Column="1" Grid.Row="2" x:Name="TotalLabel"/>
+                <Label Text="{Binding ThePitcher.Total}" Grid.Column="1" Grid.Row="2" x:Name="TotalLabel"/>
             </Grid>
+            <Button Text="Reset"
+                    Command="{Binding ResetCommand}"/>
 
         </VerticalStackLayout>
     </ScrollView>
