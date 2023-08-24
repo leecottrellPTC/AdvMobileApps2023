@@ -5,6 +5,7 @@
              xmlns:local="clr-namespace:BoredAPIPlay.ViewModels">
     <ContentPage.BindingContext>
         <local:BoredViewModel/>
+        <!--<local:BoredValues/>-->
     </ContentPage.BindingContext>
 
     <ScrollView>
@@ -14,11 +15,11 @@
             VerticalOptions="Center">
 
             <Label Text="I am bored!" FontSize="Title"/>
-            <Button Text="Give me something to do"/>
-            <Label Text="{Binding BoredValues.Activity}" FontSize="Medium"/>
-            <Label Text="Category" FontSize="Medium"/>
-            <Label Text="Participants" FontSize="Medium"/>
-            <Label Text="Cost" FontSize="Medium"/>
+            <Button Text="Give me something to do" Command="{Binding ConsumeRestCommand}"/>
+            <Label Text="{Binding BoredValues.activity}" FontSize="Medium"/>
+            <Label Text="{Binding BoredValues.type}" FontSize="Medium"/>
+            <Label Text="{Binding BoredValues.participants}" FontSize="Medium"/>
+            <Label Text="{Binding BoredValues.price}" FontSize="Medium"/>
         </VerticalStackLayout>
     </ScrollView>
 
