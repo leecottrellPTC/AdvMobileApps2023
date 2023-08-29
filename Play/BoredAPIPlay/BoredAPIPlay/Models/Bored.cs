@@ -20,7 +20,7 @@ namespace BoredAPIPlay.Models
             }
         }
         private string _activity;
-        public string Activity
+        public string activity
         {
             get
             {
@@ -32,9 +32,44 @@ namespace BoredAPIPlay.Models
                 OnPropertyChanged("activity");
             }
         }
-        public string type { get; set; }
-        public int participants { get; set; }
-        public double price { get; set; }
+        private string _type;
+        public string type {
+            get
+            {
+                return _type;
+            }
+            set
+            {
+                _type = value;
+                OnPropertyChanged("type");
+            }
+         }
+        private int _participants;
+        public int participants
+        {
+            get
+            {
+                return _participants;
+            }
+            set
+            {
+                _participants = value;
+                OnPropertyChanged("participants");
+            } 
+        }
+        private double _price;
+        public double price 
+        {
+            get
+            {
+                return _price;
+            }
+            set
+            {
+                _price = value;
+                OnPropertyChanged("price");
+            }
+        }
         public string link { get; set; }
         public string key { get; set; }
         public double accessibility { get; set; }
@@ -52,7 +87,7 @@ namespace BoredAPIPlay.Models
 
         public Bored()
         {
-            this._activity = "No Activity";
+            this._activity = "No Activity Described";
             this.type = "Education";
             this.participants = 1;
             this.price = .1;
