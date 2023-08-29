@@ -27,5 +27,24 @@ namespace PitchCounter.ViewModels
         {
             _dbPath = dbPath;//set database name
         }
+
+        public async void InsertPitcher(PlayerClass newPitcher)
+        {
+            int result = 0;
+            try
+            {
+                Init();
+                if (string.IsNullOrEmpty(newPitcher.Name)){
+                    //protect my data
+                    throw new Exception("Name Required");
+                }//end if
+                //check everything that could be an issue
+                result = _connection.Insert(newPitcher);
+            }//end try
+            catch(Exception ex)
+            {
+                await App.Current.MainPage.DisplayAlert("DB Error", ex.ToString(), "OK");
+            }
+        }
     }
 }

@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using PitchCounter.Models;
 using System.ComponentModel;
+using PitchCounter.ViewModels;
 
 namespace PitchCounter.ViewModels
 {
@@ -22,6 +23,7 @@ namespace PitchCounter.ViewModels
             if (saveIt)
             {
                 //will write to database here
+                App.pitchDBase.InsertPitcher(_thePitcher);
                 _thePitcher.Name = null;
                 _thePitcher.Balls = 0;
                 _thePitcher.Strikes = 0;
