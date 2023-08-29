@@ -13,6 +13,21 @@ namespace PitchCounter.ViewModels
         public Command AddBallCommand { get; set; }
         public Command AddStrikeCommand { get; set; }
         public Command ResetCommand { get; set; }
+        public Command NewPitcherCommand { get; set; }
+
+        public async void NewPitcher()
+        {
+            bool saveIt = await App.Current.MainPage.DisplayAlert("New Pitcher?",
+                    "Save and clear pitcher?", "Yes", "No");
+            if (saveIt)
+            {
+                //will write to database here
+                _thePitcher.Name = null;
+                _thePitcher.Balls = 0;
+                _thePitcher.Strikes = 0;
+                _thePitcher.GameDate = DateTime.Now;
+            }
+        }
 
         public void Reset()
         {
@@ -26,7 +41,8 @@ namespace PitchCounter.ViewModels
             //link the public Command to the logic function
             AddBallCommand = new Command(AddBall);
             AddStrikeCommand = new Command(AddStrike);
-            ResetCommand = new Command(Reset);
+           // ResetCommand = new Command(Reset);
+            NewPitcherCommand = new Command(NewPitcher);
             _thePitcher = new PlayerClass();
         }
         public void AddBall()

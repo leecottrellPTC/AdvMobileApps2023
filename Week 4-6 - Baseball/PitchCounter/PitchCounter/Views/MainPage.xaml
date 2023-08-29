@@ -65,8 +65,8 @@
                 <Label Text="{x:Static res:Strings.TotPitches}" Grid.Column="0" Grid.Row="4" x:Name="TotPitches"/>
                 <Label Text="{Binding ThePitcher.Total}" Grid.Column="1" Grid.Row="4" x:Name="TotalLabel"/>
             </Grid>
-            <Button Text="Reset"
-                    Command="{Binding ResetCommand}"/>
+            <Button Text="New Pitcher"
+                    Command="{Binding NewPitcherCommand}"/>
 
         </VerticalStackLayout>
     </ScrollView>
