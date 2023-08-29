@@ -56,13 +56,22 @@ namespace PitchCounter.Models
 
 		private string _name;
 
-        
-
         public string Name
 		{
 			get { return _name; }
-			set { _name = value; }
+			set { _name = value;
+                OnPropertyChanged("Name");
+            }
 		}
+
+        private DateTime _gameDate;
+        public DateTime GameDate
+        {
+            get { return _gameDate; }
+            set { _gameDate = value;
+                OnPropertyChanged("GameDate");
+            }
+        }
 
         public PlayerClass(int balls, int strikes, int total, string name)
         {
@@ -85,6 +94,7 @@ namespace PitchCounter.Models
             _strikes = 0;
             _total = 0;
             _name = "No Name";
+            _gameDate = DateTime.Today;
         }
     }
 }

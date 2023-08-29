@@ -29,20 +29,41 @@
                     <RowDefinition Height="50"/>
                     <RowDefinition Height="50"/>
                     <RowDefinition Height="50"/>
+                    <RowDefinition Height="50"/>
+                    <RowDefinition Height="50"/>
                     <RowDefinition Height="200"/>
                 </Grid.RowDefinitions>
+                <Label Text="Pitcher Name" 
+                       HorizontalOptions="Start" 
+                       Grid.Column="0"
+                       Grid.Row="0"/>
+                <Entry Text="{Binding ThePitcher.Name}"
+                       Placeholder="Enter Name"
+                       HorizontalOptions="Center"
+                       WidthRequest="200"
+                       Grid.Column="1"
+                       Grid.Row="0"/>
+                
+                <Label Text="Game Date"
+                       HorizontalOptions="Start" 
+                        Grid.Column="0"
+                        Grid.Row="1"/>
+                <DatePicker Date="{Binding ThePitcher.GameDate}" 
+                            Grid.Column="1"
+                            Grid.Row="1"/>
+<!--add two (2) to each row below here-->
                 <Button Text="{x:Static res:Strings.BallText}" 
                         Command="{Binding AddBallCommand}"
-                        Grid.Column="0" Grid.Row="0" x:Name="BallButton"/>
+                        Grid.Column="0" Grid.Row="2" x:Name="BallButton"/>
                 <Button Text="{x:Static res:Strings.StrikeText}" 
                         Command="{Binding AddStrikeCommand}"
-                        Grid.Column="0" Grid.Row="1" x:Name="StrikeButton"/>
+                        Grid.Column="0" Grid.Row="3" x:Name="StrikeButton"/>
 
-                <Label Text="{Binding ThePitcher.Balls}" Grid.Column="1" Grid.Row="0" x:Name="BallLabel"/>
-                <Label Text="{Binding ThePitcher.Strikes}" Grid.Column="1" Grid.Row="1" x:Name="StrikeLabel"/>
+                <Label Text="{Binding ThePitcher.Balls}" Grid.Column="1" Grid.Row="2" x:Name="BallLabel"/>
+                <Label Text="{Binding ThePitcher.Strikes}" Grid.Column="1" Grid.Row="3" x:Name="StrikeLabel"/>
 
-                <Label Text="{x:Static res:Strings.TotPitches}" Grid.Column="0" Grid.Row="2" x:Name="TotPitches"/>
-                <Label Text="{Binding ThePitcher.Total}" Grid.Column="1" Grid.Row="2" x:Name="TotalLabel"/>
+                <Label Text="{x:Static res:Strings.TotPitches}" Grid.Column="0" Grid.Row="4" x:Name="TotPitches"/>
+                <Label Text="{Binding ThePitcher.Total}" Grid.Column="1" Grid.Row="4" x:Name="TotalLabel"/>
             </Grid>
             <Button Text="Reset"
                     Command="{Binding ResetCommand}"/>

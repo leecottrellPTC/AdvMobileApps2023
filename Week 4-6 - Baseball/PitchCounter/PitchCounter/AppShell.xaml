@@ -8,15 +8,15 @@
     Shell.FlyoutBehavior="Flyout">
     <FlyoutItem FlyoutDisplayOptions="AsMultipleItems">
         <ShellContent
-            Title="Data"
-            ContentTemplate="{DataTemplate views:Data}"
-            Route="Data"
-            Icon="database.png"/>
-        <ShellContent
             Title="Home"
             ContentTemplate="{DataTemplate local:MainPage}"
             Route="MainPage"
             Icon="home.png"/>
+        <ShellContent
+            Title="Data"
+            ContentTemplate="{DataTemplate views:Data}"
+            Route="Data"
+            Icon="database.png"/>
         <ShellContent
             Title="Player"
             ContentTemplate="{DataTemplate views:Player}"
