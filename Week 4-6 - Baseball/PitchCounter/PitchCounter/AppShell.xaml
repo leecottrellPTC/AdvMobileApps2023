@@ -13,6 +13,11 @@
             Route="MainPage"
             Icon="home.png"/>
         <ShellContent
+            Title="List"
+            ContentTemplate="{DataTemplate views:ShowPitchers}"
+            Route="ShowPitchers"
+            Icon="people.png"/>
+        <ShellContent
             Title="Data"
             ContentTemplate="{DataTemplate views:Data}"
             Route="Data"

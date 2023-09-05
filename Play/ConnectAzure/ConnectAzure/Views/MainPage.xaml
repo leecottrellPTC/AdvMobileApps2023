@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ConnectAzure.MainPage">
+
+    <ScrollView>
+        <VerticalStackLayout
+            Spacing="25"
+            Padding="30,0"
+            VerticalOptions="Center">
+
+            <Label
+                Text="Henry Books"
+                SemanticProperties.HeadingLevel="Level1"
+                FontSize="32"
+                HorizontalOptions="Center" />
+
+            <Picker
+                Title="Select a book">
+                <Picker.ItemsSource>
+                    <x:Array Type="{x:Type x:String}">
+                        <x:String>Book 1</x:String>
+                        <x:String>Book 2</x:String>
+                    </x:Array>
+                </Picker.ItemsSource>
+                
+            </Picker>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="2*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowdDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowdDefinitions>
+                <Label Text="Type" Grid.Column="0" Grid.Row="0"/>
+                <Label Text="Type Name Here" Grid.Column="1" Grid.Row="0"/>
+                <Image Source="default.png" Grid.Column="0" Grid.Row="1"></Image>
+                
+            </Grid>
+            
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>

@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Azure.MainPage">
+
+    <ScrollView>
+        <VerticalStackLayout
+            Spacing="25"
+            Padding="30,0"
+            VerticalOptions="Center">
+
+            
+
+            <Label
+                Text="Azure Henry"
+                SemanticProperties.HeadingLevel="Level1"
+                FontSize="32"
+                HorizontalOptions="Center" />
+
+            <Image
+                Source="https://cottrellptc.blob.core.windows.net/cottrellblob/icons8-open-book-100.png"
+                SemanticProperties.Description="Book title"
+                HeightRequest="200"
+                HorizontalOptions="Center" />
+            <Picker
+                Title="Select a book">
+                <Picker.ItemsSource>
+                    <x:Array Type="{x:Type x:String}">
+                        <x:String>Book 1</x:String>
+                        <x:String>Book 2</x:String>
+                    </x:Array>
+                </Picker.ItemsSource>
+
+            </Picker>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="2*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Label Text="Type" Grid.Column="0" Grid.Row="0"/>
+                <Label Text="Type Name Here" Grid.Column="1" Grid.Row="0"/>
+                <Image Source="https://cottrellptc.blob.core.windows.net/cottrellblob/icons8-open-book-100.png" Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="2"></Image>
+
+            </Grid>
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>

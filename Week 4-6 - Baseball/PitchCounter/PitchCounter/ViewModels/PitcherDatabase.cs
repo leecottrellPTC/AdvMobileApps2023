@@ -45,6 +45,21 @@ namespace PitchCounter.ViewModels
             {
                 await App.Current.MainPage.DisplayAlert("DB Error", ex.ToString(), "OK");
             }
+        }//end function
+        public List<PlayerClass> GetPitchers()
+        {
+            try
+            {
+                Init();
+                return _connection.Table<PlayerClass>().OrderBy(p => p.GameDate).ToList();
+            }
+            catch(Exception ex )
+            {
+                App.Current.MainPage.DisplayAlert("Read error", ex.ToString(), "OK");
+            }
+
+            //will return blank if the database fails
+            return new List<PlayerClass>();
         }
-    }
-}
+    }//end class
+}//end namespacce
