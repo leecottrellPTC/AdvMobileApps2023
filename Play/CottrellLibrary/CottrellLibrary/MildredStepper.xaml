@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CottrellLibrary.MildredStepper">
+    <Grid ColumnDefinitions="50,120,50">
+        <Button Grid.Column="0"
+                x:Name="MinusButton"
+                Text="➖"
+                Clicked="MinusButton_Clicked"
+                VerticalOptions="Center"
+                HorizontalOptions="Center"
+                MinimumHeightRequest="50"
+                BackgroundColor="White"/>
+        <Entry Grid.Column="1"
+               x:Name="ValueEntry"
+                FontSize="42"
+               HorizontalTextAlignment="Center"
+               TextChanged="ValueEntry_TextChanged"
+               VerticalOptions="Center"
+               HorizontalOptions="Center"
+               Keyboard="Numeric"
+               />
+        <Button Grid.Column="2"
+            x:Name="PlusButton"
+            Text="➕"
+            Clicked="PlusButton_Clicked"
+            VerticalOptions="Center"
+            HorizontalOptions="Center"
+            MinimumHeightRequest="50"
+                BackgroundColor="White"/>
+
+    </Grid>
+</ContentView>
