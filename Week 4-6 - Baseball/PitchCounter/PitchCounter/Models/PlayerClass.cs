@@ -5,11 +5,17 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Linq;
 using System.ComponentModel;
+using SQLite;
 
 namespace PitchCounter.Models
 {
+    [Table("Pitcher")]
     public class PlayerClass:INotifyPropertyChanged
     {
+
+        [PrimaryKey, AutoIncrement]
+        public int PitcherPK { get; set; }
+        
         public event PropertyChangedEventHandler PropertyChanged;
 
         protected void OnPropertyChanged(string propertyName)
@@ -55,14 +61,23 @@ namespace PitchCounter.Models
 		}
 
 		private string _name;
-
-        
-
+        [MaxLength(100)]
         public string Name
 		{
 			get { return _name; }
-			set { _name = value; }
+			set { _name = value;
+                OnPropertyChanged("Name");
+            }
 		}
+
+        private DateTime _gameDate;
+        public DateTime GameDate
+        {
+            get { return _gameDate; }
+            set { _gameDate = value;
+                OnPropertyChanged("GameDate");
+            }
+        }
 
         public PlayerClass(int balls, int strikes, int total, string name)
         {
@@ -84,7 +99,8 @@ namespace PitchCounter.Models
             _balls = 0;
             _strikes = 0;
             _total = 0;
-            _name = "No Name";
+            //_name = "No Name";
+            _gameDate = DateTime.Today;
         }
     }
 }

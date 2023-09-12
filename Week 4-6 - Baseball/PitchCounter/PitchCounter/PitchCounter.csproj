@@ -50,8 +50,15 @@
 
 	<ItemGroup>
 	  <None Remove="Resources\Images\home.png" />
+	  <None Remove="Resources\Images\people.png" />
 	  <None Remove="Resources\Images\player.png" />
 	  <None Remove="Resources\Images\settings.png" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <PackageReference Include="sqlite-net" Version="1.6.292" />
+	  <PackageReference Include="sqlite-net-pcl" Version="1.8.116" />
+	  <PackageReference Include="SQLitePCLRaw.provider.dynamic_cdecl" Version="2.1.6" />
 	</ItemGroup>
 
 	<ItemGroup>
@@ -80,6 +87,9 @@
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Views\Settings.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\ShowPitchers.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	</ItemGroup>
