@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CottrellLibrary2.Likert"
+             x:Name="LikertControl"
+             BindingContext="{x:Reference LikertControl}">
+    <Grid ColumnDefinitions="*,*,*,*,*" RowDefinitions="*,*">
+        <Label x:Name="QuestionLabel"
+               Text="{Binding Question}"
+               Grid.Row="0"
+               Grid.ColumnSpan="5"
+               FontSize="Medium"
+               HorizontalTextAlignment="Start"/>
+        
+        <RadioButton Content="Strongly Disagree" Value="1" HorizontalOptions="Center" Grid.Column="0" Grid.Row="1"
+                     CheckedChanged="ChoiceChange"/>
+        <RadioButton Content="Disagree" Value="2" HorizontalOptions="Center" Grid.Column="1" Grid.Row="1"
+                     CheckedChanged="ChoiceChange"/>
+        <RadioButton Content="Neutral" Value="3" HorizontalOptions="Center" Grid.Column="2" Grid.Row="1"
+                     CheckedChanged="ChoiceChange"/>
+        <RadioButton Content="Agree" Value="4" HorizontalOptions="Center" Grid.Column="3" Grid.Row="1"
+                     CheckedChanged="ChoiceChange"/>
+        <RadioButton Content="Strongly Agree" Value="5" HorizontalOptions="Center" Grid.Column="4" Grid.Row="1"
+                     CheckedChanged="ChoiceChange"/>
+    </Grid>
+</ContentView>
