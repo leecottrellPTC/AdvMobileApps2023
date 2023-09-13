@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MvvmSourceGeneratorPractice.MainPage"
+             xmlns:local="clr-namespace:MvvmSourceGeneratorPractice.Models">
+    <ContentPage.BindingContext>
+        <local:UserName/>
+    </ContentPage.BindingContext>
+
+    <ScrollView>
+        <VerticalStackLayout
+            Spacing="25"
+            Padding="30,0"
+            VerticalOptions="Center">
+
+            <Label Text="Enter first name"/>
+            <Entry x:Name="FnameEntry"
+                   Keyboard="Default"
+                   Text="{Binding FirstName}"/>
+
+            <Label Text="Enter last name"/>
+            <Entry x:Name="LnameEntry"
+                    Keyboard="Default"
+                   Text="{Binding LastName}"/>
+
+            <Button Text="Generate username"
+                    Command="{Binding buildUserNameCommand}"/>
+
+            <Label x:Name="UserNameLabel"
+                   Text="{Binding LoginName}"/>
+
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
